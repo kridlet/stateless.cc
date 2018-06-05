@@ -24,6 +24,7 @@ import json
 import random
 import string
 
+URL = 'stateless.cc'
 
 # Create app
 app = Flask(__name__)

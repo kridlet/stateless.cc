@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-StateLess! | Teams Overview
+stateless! | Teams Overview
 {% endblock %}
 {% block content %}
 <body>
@@ -33,6 +33,11 @@ StateLess! | Teams Overview
                     {% endif %}
 
                 </li>
+                {% if current_user.roles[0] == 'state' %}
+                <li class="__active">
+                  <a href="/account"><span class="fa fa-cog light-blue" aria-hidden="true"></span>&nbsp; Account Settings</a>
+                </li>
+                {% endif %}
                 {% if current_user.roles[0] == 'teamlead' %}
                     <li>
                     <a href="/addTeamMember"><span class="fa fa-plus light-blue" aria-hidden="true"></span>&nbsp; Add Team Member</a>
@@ -58,7 +63,7 @@ StateLess! | Teams Overview
                     		<span><a href="#menu-toggle" id="menu-toggle"><span class="hvr-shrink fa fa-bars fa-3x amber-red" aria-hidden="true"></span></a></span>
                     		</div>
                     		<div class='col-xs-8 col-xs-offset-2'>
-	                    	<span class="__header pull-right">StateLess</span>
+	                    	<span class="__header pull-right">stateless</span>
                     		</div>
                     	</div>
                     	<div class="row">
